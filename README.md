@@ -8,7 +8,7 @@ Pour télécharger et lancer le script, exécutez les commandes suivantes dans v
 
 1.  **Télécharger le script :**
     ```bash
-    curl -o postinstall.sh [https://raw.githubusercontent.com/razen377/Postinstall/refs/heads/main/postinstall.sh](https://raw.githubusercontent.com/razen377/Postinstall/refs/heads/main/postinstall.sh)
+    curl -o postinstall.sh https://raw.githubusercontent.com/razen377/Postinstall/refs/heads/main/postinstall.sh
     ```
 
 2.  **Rendre le script exécutable :**
