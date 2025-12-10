@@ -3,13 +3,13 @@
     apt update && apt upgrade -y
     apt install -y ssh zip unzip nmap locate ncdu curl git screen dnsutils net-tools sudo lynx winbind samba
 
-    # 1. Configuration des couleurs pour l'utilisateur root (/root/.bashrc)
+    # 1. Configuration des couleurs pour l'utilisateur root 
     echo "export LS_OPTIONS='--color=auto'" >> /root/.bashrc
     echo "eval \"\$(dircolors)\"" >> /root/.bashrc
     echo "alias ls='ls \$LS_OPTIONS'" >> /root/.bashrc
     echo "alias ll='ls \$LS_OPTIONS -l'" >> /root/.bashrc
 
-    # 2. Configuration /etc/nsswitch.conf
+    # 2. Configuration du service nsswitch.conf
     rm -f /etc/nsswitch.conf
     echo "# /etc/nsswitch.conf" > /etc/nsswitch.conf
     echo "passwd: files systemd winbind" >> /etc/nsswitch.conf
@@ -26,16 +26,17 @@
 
     # 3. Installation et configuration de Webmin
     curl -o webmin-setup-repo.sh https://raw.githubusercontent.com/webmin/webmin/master/webmin-setup-repo.sh
-    sh webmin-setup-repo.sh
+    # Tape 'Y' pour répondre oui à la question 
+    echo "Y" | sh webmin-setup-repo.sh
     apt install webmin --install-recommends -y
     
-    # 4. Installation des jeux BSD (Bonus Fun)
+    # 4. Installation des jeux 
     apt install bsdgames -y
 
 # Message de fin
 echo ""
 echo "=================================================="
-echo "✅ Configuration complète !"
+echo " Configuration complète !"
 echo "Webmin est installé. Accès via : https://votreIP:10000"
 echo "Les jeux BSD sont installés dans /usr/games."
 echo "Redémarre le serveur avec : reboot"
