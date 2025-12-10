@@ -3,7 +3,7 @@
     apt update && apt upgrade -y
     apt install -y ssh zip unzip nmap locate ncdu curl git screen dnsutils net-tools sudo lynx winbind samba
 
-    # 1. Configuration des couleurs pour l'utilisateur root
+    # 1. Configuration .bashrc
     echo "export LS_OPTIONS='--color=auto'" >> /root/.bashrc
     echo "eval \"\$(dircolors)\"" >> /root/.bashrc
     echo "alias ls='ls \$LS_OPTIONS'" >> /root/.bashrc
@@ -26,7 +26,7 @@
 
     # 3. Installation et configuration de Webmin
     curl -o webmin-setup-repo.sh https://raw.githubusercontent.com/webmin/webmin/master/webmin-setup-repo.sh
-    # Utilisation de 'yes Y |' pour forcer la réponse Oui 
+    # Utilisation de 'yes Y |' pour forcer la réponse Yes
     yes Y | sh webmin-setup-repo.sh
     rm webmin-setup-repo.sh
     
@@ -35,11 +35,5 @@
     # 4. Installation des jeux BSD (Bonus Fun)
     apt install bsdgames -y
 
-# Message de fin
-echo ""
-echo "=================================================="
-echo " Configuration complète !"
-echo "Webmin est installé. Accès via : https://votreIP:10000"
-echo "Les jeux BSD sont installés dans /usr/games."
 echo "Redémarre le serveur avec : reboot"
-echo "=================================================="
+
