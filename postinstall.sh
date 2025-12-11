@@ -8,6 +8,7 @@
     echo "eval \"\$(dircolors)\"" >> /root/.bashrc
     echo "alias ls='ls \$LS_OPTIONS'" >> /root/.bashrc
     echo "alias ll='ls \$LS_OPTIONS -l'" >> /root/.bashrc
+    echo "alias l='ls \$LS_OPTIONS -lA''" >> /root/.bashrc
 
     # 2. Configuration du service /etc/nsswitch.conf
     rm -f /etc/nsswitch.conf
